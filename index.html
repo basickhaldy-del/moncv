@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hatim Khaldy | CV Moderne</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, 'Inter', sans-serif;
+            background: linear-gradient(145deg, #e9eff7 0%, #dbe4ed 100%);
+            color: #1e2a3e;
+            padding: 40px 24px;
+            line-height: 1.5;
+        }
+
+        /* Conteneur principal avec élégance */
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        /* En-tête avec identité forte */
+        .hero {
+            background: linear-gradient(135deg, #0B2B40 0%, #1B4F6E 100%);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-bottom: 6px solid #FFB347;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: white;
+            margin: 0;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hero .title-tag {
+            color: rgba(255,255,240,0.9);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 8px;
+            letter-spacing: 1px;
+            word-break: keep-all;
+            border-top: 1px dashed rgba(255,255,200,0.3);
+            display: inline-block;
+            padding-top: 8px;
+        }
+
+        /* Grille principale : 2 colonnes responsive */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+            background: #fff;
+        }
+
+        /* Colonne de gauche : identité + infos perso */
+        .sidebar {
+            background: #F9FBFD;
+            padding: 2rem 1.8rem;
+            border-right: 1px solid #e2edf2;
+        }
+
+        .info-card {
+            margin-bottom: 2rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0B2B40;
+            border-left: 5px solid #FFB347;
+            padding-left: 14px;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.2px;
+        }
+
+        .identity-detail p {
+            margin: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: #2c3f4f;
+            flex-wrap: wrap;
+        }
+
+        .identity-detail strong {
+            color: #1B4F6E;
+            font-weight: 600;
+            min-width: 85px;
+        }
+
+        .contact-icon {
+            font-weight: 500;
+            background: #eef2f7;
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        /* Style langues & loisirs (côté gauche) */
+        .lang-list, .hobby-list {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        .lang-list li, .hobby-list li {
+            background: #ffffff;
+            margin: 10px 0;
+            padding: 10px 14px;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #1e4663;
+            border: 1px solid #dce5ec;
+            transition: all 0.2s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        .lang-list li:hover, .hobby-list li:hover {
+            border-color: #FFB347;
+            background: #fff7eb;
+            transform: translateX(3px);
+        }
+
+        /* Colonne de droite : expérience, études */
+        .main-content {
+            padding: 2rem 2rem 2rem 1.8rem;
+            background: #ffffff;
+        }
+
+        .section {
+            margin-bottom: 2.2rem;
+        }
+
+        .section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0B2B40;
+            border-bottom: 3px solid #FFB347;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.2px;
+        }
+
+        /* Cartes modernes pour expérience & études */
+        .exp-card, .edu-card {
+            background: #FEFCF5;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #eef0f3;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .exp-card:hover, .edu-card:hover {
+            border-color: #FFB34780;
+            box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+        }
+
+        .exp-card strong, .edu-card strong {
+            color: #1B4F6E;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+
+        .exp-date {
+            font-size: 0.8rem;
+            color: #F39C12;
+            font-weight: 500;
+            background: #fef1df;
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 40px;
+            margin-bottom: 10px;
+        }
+
+        .edu-item {
+            margin-bottom: 12px;
+            border-left: 2px solid #FFB347;
+            padding-left: 16px;
+        }
+
+        .edu-item p {
+            margin: 4px 0;
+        }
+
+        .edu-year {
+            font-weight: 700;
+            color: #2c5a74;
+            font-size: 0.9rem;
+        }
+
+        /* badges / détails */
+        .badge-light {
+            background: #eef2fa;
+            padding: 6px 12px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #2c5a74;
+            font-weight: 500;
+        }
+
+        hr {
+            margin: 18px 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #e0e9f0, transparent);
+        }
+
+        /* responsive design */
+        @media (max-width: 750px) {
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #e2edf2;
+            }
+            body {
+                padding: 20px 16px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* petites touches d'élégance */
+        .footer-note {
+            text-align: center;
+            padding: 1rem 1rem 1.5rem;
+            font-size: 0.7rem;
+            color: #7f8c8d;
+            background: #fff;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .btn-print {
+            background: none;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #2c5a74;
+        }
+
+        .btn-print:hover {
+            background: #FFB34720;
+            border-color: #FFB347;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- En-tête professionnel avec identité marquante -->
+    <div class="hero">
+        <h1>Hatim Khaldy</h1>
+        <div class="title-tag">Étudiant en Comptabilité & Gestion | Passionné de sport et développement</div>
+    </div>
+
+    <div class="cv-grid">
+        <!-- Colonne latérale : infos personnelles, langues, loisirs -->
+        <div class="sidebar">
+            <div class="info-card">
+                <h3>Identité</h3>
+                <div class="identity-detail">
+                    <p><strong>Nom</strong> <span>KHALDY</span></p>
+                    <p><strong>Prénom</strong> <span>Hatim</span></p>
+                    <p><strong>Date de naissance</strong> <span>06 septembre 2004</span></p>
+                    <p><strong>Email</strong> <span class="contact-icon">hatimkhaldy00@gmail.com</span></p>
+                    <p><strong>Téléphone</strong> <span class="contact-icon">07 58 41 47 43</span></p>
+                    <p><strong>Adresse</strong> <span>4 rue Agathe Legrand</span></p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Langues</h3>
+                <ul class="lang-list">
+                    <li>🇫🇷 Français (Courant)</li>
+                    <li>🇬🇧 Anglais (Intermédiaire / Technique)</li>
+                    <li>🇸🇦 Arabe (Langue maternelle)</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Loisirs & passions</h3>
+                <ul class="hobby-list">
+                    <li>✈️ Voyages & découvertes</li>
+                    <li>🎮 Jeux vidéo & Gaming compétitif</li>
+                    <li>🏋️‍♂️ Salle de sport / Fitness</li>
+                    <li>🍃 Sorties & événements culturels</li>
+                    <li>⚽ Football (coaching & pratique)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Colonne principale : expériences, études, compétences complémentaires -->
+        <div class="main-content">
+            <!-- Expérience professionnelle -->
+            <div class="section">
+                <h3>Expérience professionnelle</h3>
+                <div class="exp-card">
+                    <div class="exp-date">Septembre 2023 – Septembre 2024 · 1 an</div>
+                    <strong>⚽ Coach de football féminin</strong>
+                    <p style="margin-top: 10px; color: #2c4b66;">Encadrement et entraînement d'une équipe féminine : organisation des séances, développement technique et tactique, gestion de groupe et esprit d'équipe. Renforcement des compétences en leadership, communication et pédagogie.</p>
+                </div>
+                <!-- On peut ajouter une autre expérience fictive si besoin mais on garde l'intégrité du CV -->
+            </div>
+
+            <!-- Études & diplômes -->
+            <div class="section">
+                <h3>Parcours académique</h3>
+                <div class="edu-card">
+                    <div class="edu-item">
+                        <p class="edu-year">🎓 2022 – 2024</p>
+                        <strong>BTS Comptabilité et Gestion</strong>
+                        <p>Acquisition de compétences solides en comptabilité financière, analyse de gestion, fiscalité et outils informatiques (SAGE, Excel avancé). Stage en cabinet d'expertise comptable.</p>
+                    </div>
+                    <hr>
+                    <div class="edu-item">
+                        <p class="edu-year">📘 2020 – 2021</p>
+                        <strong>Baccalauréat STMG (Sciences et Technologies du Management et de la Gestion)</strong>
+                        <p>Spécialité Mercatique (marketing) – Mention Assez Bien. Maîtrise des fondamentaux de la gestion, management des organisations.</p>
+                    </div>
+                    <hr>
+                    <div class="edu-item">
+                        <p class="edu-year">🏅 2018 – 2019</p>
+                        <strong>Diplôme National du Brevet</strong>
+                        <p>Collège – Mention Bien.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft skills & compétences transversales (ajout moderne pour enrichir) -->
+            <div class="section">
+                <h3>Savoir-être & atouts</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px;">
+                    <span class="badge-light">🤝 Leadership & esprit d'équipe</span>
+                    <span class="badge-light">⏱️ Gestion du stress</span>
+                    <span class="badge-light">📊 Rigueur comptable</span>
+                    <span class="badge-light">💬 Communication interpersonnelle</span>
+                    <span class="badge-light">🎯 Adaptabilité & curiosité</span>
+                    <span class="badge-light">⚙️ Pack Office / SAGE</span>
+                </div>
+            </div>
+
+            <!-- certification ou supplément: expérience de gaming / sport peut être valorisé -->
+            <div class="section">
+                <h3>Engagements & centres d'intérêt</h3>
+                <div style="background: #F8FAFE; border-radius: 24px; padding: 1rem 1.2rem; border: 1px solid #E9F0F5;">
+                    <p style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <span style="font-weight:600;">🏆 Coaching bénévole :</span> 
+                        Animation d'ateliers sportifs pour jeunes, développement de valeurs de fair-play et persévérance.
+                    </p>
+                    <p style="margin-top: 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <span style="font-weight:600;">🎮 Gaming & e-sport :</span> 
+                        Participation à des compétitions locales, gestion d'équipe et analyse stratégique en temps réel.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <button class="btn-print" id="printCV">🖨️ Télécharger / Imprimer le CV</button>
+        <span style="margin-left: 12px;">✨ Disponible pour un stage ou alternance en comptabilité/gestion</span>
+    </div>
+</div>
+
+<script>
+    // Fonction d'impression simple et élégante pour conserver le thème du CV
+    const printBtn = document.getElementById('printCV');
+    if (printBtn) {
+        printBtn.addEventListener('click', () => {
+            window.print();
+        });
+    }
+
+    // Petite amélioration responsive dynamique pour le hover des badges (optionnel)
+    const badges = document.querySelectorAll('.badge-light');
+    badges.forEach(b => {
+        b.addEventListener('mouseenter', () => {
+            b.style.transform = 'scale(1.02)';
+            b.style.transition = '0.1s ease';
+        });
+        b.addEventListener('mouseleave', () => {
+            b.style.transform = 'scale(1)';
+        });
+    });
+</script>
+</body>
+</html>
